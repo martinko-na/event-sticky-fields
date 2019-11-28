@@ -42,6 +42,10 @@
     </types>
     <types>
         <members>*</members>
+        <name>PermissionSet</name>
+    </types>    
+    <types>
+        <members>*</members>
         <name>Layout</name>
     </types>              
     <version>46.0</version>
