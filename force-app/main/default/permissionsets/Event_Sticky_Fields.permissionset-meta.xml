@@ -12,6 +12,11 @@
         <apexClass>sf_StickyFieldsService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Sticky_JSON__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Event Sticky Fields</label>
     <objectPermissions>
