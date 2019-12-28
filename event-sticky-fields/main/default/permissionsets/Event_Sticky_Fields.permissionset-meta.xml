@@ -2,7 +2,7 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>Event Sticky Fields</label>
     <classAccesses>
-        <apexClass>ps_AccountStickyFieldsService</apexClass>
+        <apexClass>esf_AccountStickyFieldsService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

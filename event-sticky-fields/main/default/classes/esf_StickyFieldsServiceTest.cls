@@ -22,7 +22,7 @@ public class esf_StickyFieldsServiceTest {
 
         // given
         List<Account> records = 
-            (List<Account>) ps_TestFactory.createSObjectList(
+            (List<Account>) esf_TestFactory.createSObjectList(
                 new Account(Type = STICKY_VALUE), NUM_OF_ACC, true);   
 
         // when

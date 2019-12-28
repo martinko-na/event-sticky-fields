@@ -5,7 +5,7 @@ private class esf_TestFactoryTest{
   static void when_objectIsCreated_expect_defaultFieldsArePopulated(){
     //when
     Test.startTest();
-      Account testAccount = (Account)ps_TestFactory.createSObject(new Account());
+      Account testAccount = (Account)esf_TestFactory.createSObject(new Account());
     Test.stopTest();
     //then
     System.assertEquals('Test Account', testAccount.Name, 'Expecting Default field value is set to specific value');
@@ -15,7 +15,7 @@ private class esf_TestFactoryTest{
   static void when_objectIsInserted_expect_defaultFieldsArePopulated(){
     //when
     Test.startTest(); 
-      Account testAccount = (Account)ps_TestFactory.createSObject(new Account(),true);
+      Account testAccount = (Account)esf_TestFactory.createSObject(new Account(),true);
     Test.stopTest();
     //then
     testAccount = [SELECT Name FROM Account WHERE Id = :testAccount.Id];
@@ -26,7 +26,7 @@ private class esf_TestFactoryTest{
   static void when_objectIsCreatedWithSpecificDefaultsSet_expect_defaultFieldsArePopulated(){
     //when
     Test.startTest();
-      Account testAccount = (Account)ps_TestFactory.createSObject(new Account(), 'ps_TestFactoryDefaults.MyAccountDefaults');
+      Account testAccount = (Account)esf_TestFactory.createSObject(new Account(), 'esf_TestFactoryDefaults.MyAccountDefaults');
     Test.stopTest();
     //then
     System.assertEquals('My Test Account', testAccount.Name, 'Expecting Default field value is set to specific value');
@@ -36,7 +36,7 @@ private class esf_TestFactoryTest{
   static void when_objectIsInsertedWithSpecificDefaultsSet_expect_defaultFieldsArePopulated(){
     //when
     Test.startTest();
-      Account testAccount = (Account)ps_TestFactory.createSObject(new Account(), 'ps_TestFactoryDefaults.MyAccountDefaults', true);
+      Account testAccount = (Account)esf_TestFactory.createSObject(new Account(), 'esf_TestFactoryDefaults.MyAccountDefaults', true);
     Test.stopTest();
     //then
     System.assertEquals('My Test Account', testAccount.Name, 'Expecting Default field value is set to specific value');
@@ -46,7 +46,7 @@ private class esf_TestFactoryTest{
   static void when_ListOfObjectsIsCreated_expect_defaultFieldsArePopulated(){
     //when
     Test.startTest();
-      Account[] testAccounts = (Account[])ps_TestFactory.createSObjectList(new Account(), 200);
+      Account[] testAccounts = (Account[])esf_TestFactory.createSObjectList(new Account(), 200);
     Test.stopTest();
     //then
     System.assertEquals(200, testAccounts.size());
@@ -61,7 +61,7 @@ private class esf_TestFactoryTest{
   static void when_ListOfObjectIsInserted_expect_defaultFieldsArePopulated(){
     //when
     Test.startTest();
-      Account[] testAccounts = (Account[])ps_TestFactory.createSObjectList(new Account(), 200, true);
+      Account[] testAccounts = (Account[])esf_TestFactory.createSObjectList(new Account(), 200, true);
     Test.stopTest();
     //then
     testAccounts = [SELECT Name FROM Account WHERE Id IN :testAccounts ORDER BY Name];
@@ -76,7 +76,7 @@ private class esf_TestFactoryTest{
   static void when_ListOfObjectsIsCreatedWithSpecificDefaultsSet_expect_defaultFieldsArePopulated(){
     //when
     Test.startTest();
-      Account[] testAccounts = (Account[])ps_TestFactory.createSObjectList(new Account(), 200, 'ps_TestFactoryDefaults.MyAccountDefaults');
+      Account[] testAccounts = (Account[])esf_TestFactory.createSObjectList(new Account(), 200, 'esf_TestFactoryDefaults.MyAccountDefaults');
     Test.stopTest();
     //then
     System.assertEquals(200, testAccounts.size());
@@ -91,7 +91,7 @@ private class esf_TestFactoryTest{
   static void when_ListOfObjectsIsInsertedWithSpecificDefaultsSet_expect_defaultFieldsArePopulated(){
     //when
     Test.startTest();
-      Account[] testAccounts = (Account[])ps_TestFactory.createSObjectList(new Account(), 200, 'ps_TestFactoryDefaults.MyAccountDefaults', true);
+      Account[] testAccounts = (Account[])esf_TestFactory.createSObjectList(new Account(), 200, 'esf_TestFactoryDefaults.MyAccountDefaults', true);
     Test.stopTest();
     //then
     testAccounts = [SELECT Name FROM Account WHERE Id IN :testAccounts ORDER BY Name];
