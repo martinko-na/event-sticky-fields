@@ -6,8 +6,8 @@
     <label>Field</label>
     <metadataRelationshipControllingField>Sticky_Field__mdt.Entity__c</metadataRelationshipControllingField>
     <referenceTo>FieldDefinition</referenceTo>
-    <relationshipLabel>Stickyu_Fields</relationshipLabel>
-    <relationshipName>Stickyu_Fields</relationshipName>
+    <relationshipLabel>Sticky_Fields</relationshipLabel>
+    <relationshipName>Sticky_Fields</relationshipName>
     <required>true</required>
     <type>MetadataRelationship</type>
     <unique>false</unique>
