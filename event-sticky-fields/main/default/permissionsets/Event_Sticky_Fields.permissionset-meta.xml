@@ -1,24 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Event Sticky Fields</label>
     <classAccesses>
         <apexClass>ps_AccountStickyFieldsService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>sf_StickyFields</apexClass>
+        <apexClass>esf_StickyFields</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>sf_StickyFieldsService</apexClass>
+        <apexClass>esf_StickyFieldsService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Sticky_JSON__c</field>
+        <field>Account.esf_Sticky_JSON__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <hasActivationRequired>false</hasActivationRequired>
-    <label>Event Sticky Fields</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
@@ -28,8 +27,4 @@
         <object>Account</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>RunFlow</name>
-    </userPermissions>
 </PermissionSet>
