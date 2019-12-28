@@ -30,8 +30,7 @@ public without sharing virtual class esf_StickyFieldsService {
     **/
     public static List<sObject> setRecordsWithStickyFields(List<sObject> records, Schema.sObjectField stickyJsonField) {
         
-        List<Event_Sticky_Field__mdt> stickyFieldsMdt = getThemStickyFieldsMdt(records[0].Id.getSObjectType());
-        Map<Id, List<ps_AccountService.SystemReference>> sysRefs = ps_AccountService.getSystemReferencesByAccounts(records);
+        List<Event_Sticky_Field__mdt> stickyFieldsMdt = getThemStickyFieldsMdt(records[0].Id.getSObjectType());        
         List<sObject> newRecords = new List<sObject>();
 
         for (sObject rec : records) {
@@ -47,10 +46,6 @@ public without sharing virtual class esf_StickyFieldsService {
                 }                
             }            
 
-            if (sysRefs.get(rec.Id) != NULL && sysRefs.get(rec.Id).size() > 0) {
-                stickyFields.put(ps_GlobalConstants.SYSTEM_REFERENCES, sysRefs.get(rec.Id));
-            }
-            
             newRecord.Id = rec.Id;
             newRecord.put(stickyJsonField, JSON.serialize(stickyFields));
             newRecords.add(newRecord);
