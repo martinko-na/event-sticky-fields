@@ -7,8 +7,8 @@ public class esf_TestFactory {
 		// Construct the default values class. Salesforce doesn't allow '__' in class names
 		String defaultClassName = objectName.replaceAll('__(c|C)$|__', '') + 'Defaults';
 		// If there is a class that exists for the default values, then use them
-		if (Type.forName('TestFactoryDefaults.' + defaultClassName) != null) {
-			sObj = createSObject(sObj, 'TestFactoryDefaults.' + defaultClassName);
+		if (Type.forName('esf_TestFactoryDefaults.' + defaultClassName) != null) {
+			sObj = createSObject(sObj, 'esf_TestFactoryDefaults.' + defaultClassName);
 		}
 		return sObj;
 	}

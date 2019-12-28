@@ -17,7 +17,7 @@ public without sharing virtual class esf_StickyFieldsService {
     **/
     @TestVisible
     private static List<Event_Sticky_Field__mdt> getThemStickyFieldsMdt(Schema.SObjectType objType) {
-        return [SELECT Field__c FROM Event_Sticky_Field__mdt WHERE Entity__c = :String.valueOf(objType)];
+        return [SELECT Field__r.QualifiedApiName FROM Event_Sticky_Field__mdt WHERE Entity__c = :String.valueOf(objType)];
     }
 
     /**
@@ -39,7 +39,7 @@ public without sharing virtual class esf_StickyFieldsService {
             stickyFields.put(TIMESTAMP, Datetime.now());
             
             for (Event_Sticky_Field__mdt sf : stickyFieldsMdt) {
-                String fieldApi = sf.Field__c;
+                String fieldApi = sf.Field__r.QualifiedApiName;
 
                 if (rec.get(fieldApi) != NULL) {
                     stickyFields.put(fieldApi, rec.get(fieldApi));

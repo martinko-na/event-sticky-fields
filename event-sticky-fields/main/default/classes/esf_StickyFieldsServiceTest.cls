@@ -1,7 +1,7 @@
 @isTest
 public class esf_StickyFieldsServiceTest {
 
-    static final String STICKY_FIELD = 'Type';
+    static final String STICKY_FIELD = 'Type';    
     static final String STICKY_VALUE = 'Other';
     static final Integer NUM_OF_ACC = 200;
 
@@ -14,7 +14,7 @@ public class esf_StickyFieldsServiceTest {
         Test.stopTest();
         // then
         System.assertEquals(1, stickyFieldsMdt.size());
-        System.assertEquals(STICKY_FIELD, stickyFieldsMdt[0].Field__c);
+        System.assertEquals(STICKY_FIELD, stickyFieldsMdt[0].Field__r.QualifiedApiName);
     }
 
     @isTest
