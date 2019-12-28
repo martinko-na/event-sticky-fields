@@ -3,7 +3,7 @@
 * @date 2019-11-28
 * @description Entity specific service class. We are not able to use generic service class due to @InvocableMethod restrictions
 **/
-public without sharing class ps_AccountStickyFieldsService extends esf_StickyFieldsService implements esf_StickyFields {
+public without sharing class esf_AccountStickyFieldsService extends esf_StickyFieldsService implements esf_StickyFields {
 
     /**
     * @author Martin Kona
