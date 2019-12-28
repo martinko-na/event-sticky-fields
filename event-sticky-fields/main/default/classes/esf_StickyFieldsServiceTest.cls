@@ -1,7 +1,8 @@
 @isTest
 public class esf_StickyFieldsServiceTest {
 
-    static final String STICKY_FIELD = 'Country__pc';
+    static final String STICKY_FIELD = 'Type';
+    static final String STICKY_VALUE = 'Other';
     static final Integer NUM_OF_ACC = 200;
 
     @isTest
@@ -22,7 +23,7 @@ public class esf_StickyFieldsServiceTest {
         // given
         List<Account> records = 
             (List<Account>) ps_TestFactory.createSObjectList(
-                new Account(Country__pc = ps_GlobalConstants.SWEDEN_ISO), NUM_OF_ACC, ps_GlobalConstants.TF_PERSON_ACCOUNT_DEFAUTLS, true);   
+                new Account(Type = STICKY_VALUE), NUM_OF_ACC, true);   
 
         // when
         Test.startTest();            
@@ -35,7 +36,7 @@ public class esf_StickyFieldsServiceTest {
             Map<String, String> stickyFields = 
                 (Map<String, String> )JSON.deserialize(acc.esf_Sticky_JSON__c, Map<String, String> .class);
             System.assert(String.isNotBlank(stickyFields.get(STICKY_FIELD)), 'Sticky field must have value');
-            System.assertEquals(ps_GlobalConstants.SWEDEN_ISO, stickyFields.get(STICKY_FIELD));
+            System.assertEquals(STICKY_VALUE, stickyFields.get(STICKY_FIELD));
             System.assert(String.isNotBlank(stickyFields.get(esf_StickyFieldsService.TIMESTAMP)));
         }
     }
