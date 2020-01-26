@@ -4,3 +4,4 @@
 </a>
 
 More info in blog post here:
+https://www.linkedin.com/pulse/enrich-changeevents-workaround-martin-kona/
